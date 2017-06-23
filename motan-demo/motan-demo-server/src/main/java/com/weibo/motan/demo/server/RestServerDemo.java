@@ -13,21 +13,27 @@
  */
 package com.weibo.motan.demo.server;
 
+import com.weibo.api.motan.common.MotanConstants;
+import com.weibo.api.motan.util.MotanSwitcherUtil;
 import com.weibo.motan.demo.service.RestService;
+import com.weibo.motan.demo.service.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class RestServerDemo implements RestService {
 
-    public String hello(String id) {
+    public User hello(String id) {
         System.out.println("receive rest request, param: " + id);
-        return "Hello from rest service! Your id is: " + id;
+        return new User().setId(id).setName("motan" + id);
     }
 
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:motan_demo_server_rest.xml");
         System.out.println("rest server start...");
+
+        MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
+
         Thread.sleep(Long.MAX_VALUE);
     }
 

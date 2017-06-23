@@ -16,7 +16,6 @@
 package com.weibo.api.motan.protocol.rest;
 
 import com.weibo.api.motan.core.extension.SpiMeta;
-import com.weibo.api.motan.exception.MotanFrameworkException;
 import com.weibo.api.motan.rpc.URL;
 import com.weibo.api.motan.transport.Client;
 import com.weibo.api.motan.transport.MessageHandler;
@@ -39,8 +38,7 @@ public class RestEndpointFactory extends AbstractEndpointFactory {
 
     @Override
     protected Client innerCreateClient(URL url) {
-        // TODO 
-        throw new MotanFrameworkException("not yet implemented!");
+        return new RestClient(url);
     }
 
 }

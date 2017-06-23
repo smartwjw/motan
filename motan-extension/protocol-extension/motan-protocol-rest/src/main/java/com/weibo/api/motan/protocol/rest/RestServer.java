@@ -132,8 +132,7 @@ public class RestServer extends AbstractServer implements StatisticCallback {
 
     @Override
     public String statisticCallback() {
-        //TODO
-        throw new UnsupportedOperationException("not impl");
+        return null;
     }
 
     /**
