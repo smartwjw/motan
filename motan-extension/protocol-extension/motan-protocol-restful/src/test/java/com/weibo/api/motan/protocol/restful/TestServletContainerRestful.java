@@ -33,7 +33,7 @@ import java.util.Map;
  * @author zhouhaocheng
  *
  */
-public class TestServletCotainerRestful extends TestRestful{
+public class TestServletContainerRestful extends TestRestful {
 	private Tomcat tomcat;
 
 	private final String contextpath = "/cp";
