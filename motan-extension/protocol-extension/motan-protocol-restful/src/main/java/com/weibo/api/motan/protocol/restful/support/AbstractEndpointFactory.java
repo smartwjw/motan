@@ -33,7 +33,7 @@ import com.weibo.api.motan.util.MotanFrameworkUtil;
 
 public abstract class AbstractEndpointFactory implements EndpointFactory {
 	/** 维持share channel 的service列表 **/
-	protected Map<String, RestServer> ipPort2ServerShareChannel = new HashMap<String, RestServer>();
+	protected final Map<String, RestServer> ipPort2ServerShareChannel = new HashMap<String, RestServer>();
 	// 维持share channel 的client列表 <ip:port,client>
 	private final Map<String, ResteasyWebTarget> ipPort2ClientShareChannel = new HashMap<String, ResteasyWebTarget>();
 

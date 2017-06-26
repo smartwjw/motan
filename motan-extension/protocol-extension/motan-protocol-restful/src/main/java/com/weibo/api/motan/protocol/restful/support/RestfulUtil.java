@@ -73,6 +73,15 @@ public class RestfulUtil {
 		return result;
 	}
 
+	public static boolean isRpcRequest(HttpRequest httpRequest) {
+		final HttpHeaders headers = httpRequest.getHttpHeaders();
+		if (headers != null) {
+			final List<String> attachHeaders = headers.getRequestHeader(ATTACHMENT_HEADER);
+			return attachHeaders != null && !attachHeaders.isEmpty();
+		}
+		return false;
+	}
+
 	public static Response serializeError(Exception ex) {
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
