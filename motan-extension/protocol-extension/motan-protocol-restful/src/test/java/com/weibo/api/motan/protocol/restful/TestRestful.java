@@ -45,6 +45,7 @@ public class TestRestful {
 		protocolConfig.setName("restful");
 		protocolConfig.setEndpointFactory(this.getEndpointFactory());
 		protocolConfig.setParameters(this.getProtocolExtParameters());
+		protocolConfig.setRequestTimeout(5000);
 
 		RegistryConfig registryConfig = new RegistryConfig();
 		registryConfig.setName("local");
